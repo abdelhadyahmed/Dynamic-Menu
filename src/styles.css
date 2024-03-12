@@ -1,0 +1,12 @@
+html,
+body {
+    margin: 0;
+    padding: 0 100px 0 100px;
+    height: 100%;
+    background-color: rgb(87, 90, 90);
+    /* z-index: -1; */
+}
+
+body {
+    min-height: 100vh;
+}

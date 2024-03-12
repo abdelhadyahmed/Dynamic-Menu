@@ -1,0 +1,216 @@
+{
+    "menu": {
+        "id": 1,
+        "name": "TAO",
+        "slogan": "A journey of Asian flavours",
+        "categories":[
+            {
+                "id":1,
+                "name":"Soup",
+                "items":[
+                    {
+                        "id": 1,
+                        "name":"TOM YUM TALAY",
+                        "description": "Hot and sour seafood soup with Thai herbs"
+                    }
+                ]
+            },
+            {
+                "id":2,
+                "name":"Appetisers",
+                "items":[
+                    {
+                        "id": 1,
+                        "name":"CHICKEN TIKKA CHAAT",
+                        "description": "Sliced chicken tikka with bell peppers, onions, tamarind and mint sauce"
+                    },
+                    {
+                        "id": 2,
+                        "name":"CRISPY SEAFOOD ROLL",
+                        "description": "Shrimps, scallops, glass noodles and shitake mushrooms"
+                    }
+                ]
+            },
+            {
+                "id":3,
+                "name":"Fast Food",
+                "items":[
+                    {
+                        "id": 1,
+                        "name":"CHICKEN TIKKA CHAAT",
+                        "description": "Sliced chicken tikka with bell peppers, onions, tamarind and mint sauce"
+                    },
+                    {
+                        "id": 2,
+                        "name":"CRISPY SEAFOOD ROLL",
+                        "description": "Shrimps, scallops, glass noodles and shitake mushrooms"
+                    }
+                ]
+            },
+            {
+                "id":4,
+                "name":"Main Course",
+                "items":[
+                    {
+                        "id": 1,
+                        "name":"MURG MALAI TIKKA",
+                        "description": "Chicken marinated with Indian herbs and cream"
+                    },
+                    {
+                        "id": 2,
+                        "name":"BLACK PEPPER BEEF",
+                        "description": "Wok fried beef in black pepper sauce"
+                    },
+                    {
+                        "id": 3,
+                        "name":"VEGETABLE HAND PULL NOODLES",
+                        "description": "Wok fried noodles with vegetabless"
+                    },
+                    {
+                        "id": 4,
+                        "name":"RED VEGETABLE CURRY",
+                        "description": "With pineapple and kaffir lime"
+                    },
+                    {
+                        "id": 5,
+                        "name":"STEAMED JASMINE RICE",
+                        "description": "Steamed fragrant rice"
+                    },
+                    {
+                        "id": 4,
+                        "name":"RED VEGETABLE CURRY",
+                        "description": "With pineapple and kaffir lime"
+                    },
+                    {
+                        "id": 5,
+                        "name":"STEAMED JASMINE RICE",
+                        "description": "Steamed fragrant rice"
+                    },
+                    {
+                        "id": 4,
+                        "name":"RED VEGETABLE CURRY",
+                        "description": "With pineapple and kaffir lime"
+                    },
+                    {
+                        "id": 5,
+                        "name":"STEAMED JASMINE RICE",
+                        "description": "Steamed fragrant rice"
+                    },
+                    {
+                        "id": 4,
+                        "name":"RED VEGETABLE CURRY",
+                        "description": "With pineapple and kaffir lime"
+                    },
+                    {
+                        "id": 5,
+                        "name":"STEAMED JASMINE RICE",
+                        "description": "Steamed fragrant rice"
+                    },
+                    {
+                        "id": 4,
+                        "name":"RED VEGETABLE CURRY",
+                        "description": "With pineapple and kaffir lime"
+                    },
+                    {
+                        "id": 5,
+                        "name":"STEAMED JASMINE RICE",
+                        "description": "Steamed fragrant rice"
+                    },
+                    {
+                        "id": 4,
+                        "name":"RED VEGETABLE CURRY",
+                        "description": "With pineapple and kaffir lime"
+                    },
+                    {
+                        "id": 5,
+                        "name":"STEAMED JASMINE RICE",
+                        "description": "Steamed fragrant rice"
+                    },
+                    {
+                        "id": 4,
+                        "name":"RED VEGETABLE CURRY",
+                        "description": "With pineapple and kaffir lime"
+                    },
+                    {
+                        "id": 5,
+                        "name":"STEAMED JASMINE RICE",
+                        "description": "Steamed fragrant rice"
+                    },
+                    {
+                        "id": 4,
+                        "name":"RED VEGETABLE CURRY",
+                        "description": "With pineapple and kaffir lime"
+                    },
+                    {
+                        "id": 5,
+                        "name":"STEAMED JASMINE RICE",
+                        "description": "Steamed fragrant rice"
+                    },
+                    {
+                        "id": 4,
+                        "name":"RED VEGETABLE CURRY",
+                        "description": "With pineapple and kaffir lime"
+                    },
+                    {
+                        "id": 5,
+                        "name":"STEAMED JASMINE RICE",
+                        "description": "Steamed fragrant rice"
+                    },
+                    {
+                        "id": 6,
+                        "name":"STEAMED JASMINE RICE",
+                        "description": "Steamed fragrant rice"
+                    },
+                    {
+                        "id": 5,
+                        "name":"STEAMED JASMINE RICE",
+                        "description": "Steamed fragrant rice"
+                    },
+                    {
+                        "id": 6,
+                        "name":"STEAMED JASMINE RICE",
+                        "description": "Steamed fragrant rice"
+                    },
+                    {
+                        "id": 7,
+                        "name":"BUTTER NAAN",
+                        "description": "Tandoori bread coated with butter"
+                    }
+                ]
+            },
+            {
+                "id":5,
+                "name":"Dessert",
+                "items":[
+                    {
+                        "id": 1,
+                        "name":"BANANA FRITTERS",
+                        "description": "Deep fried banana with caramel, served with vanilla ice cream"
+                    }
+                ]
+            },
+            {
+                "id":6,
+                "name":"Cold Drinks",
+                "items":[
+                    {
+                        "id": 1,
+                        "name":"BANANA FRITTERS",
+                        "description": "Deep fried banana with caramel, served with vanilla ice cream"
+                    }
+                ]
+            },
+            {
+                "id":7,
+                "name":"Hot Drinks",
+                "items":[
+                    {
+                        "id": 1,
+                        "name":"BANANA FRITTERS",
+                        "description": "Deep fried banana with caramel, served with vanilla ice cream"
+                    }
+                ]
+            }
+        ]
+    }
+}
