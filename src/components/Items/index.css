@@ -1,15 +1,48 @@
+.menu-page-pdf {
+  position: relative;
+}
+
+.control{
+  position: fixed;
+  top: 100px;
+  left: 300px;
+  z-index: 10;
+}
+
+.category-name {
+  margin: 0;
+}
+
+.back-button {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  z-index: 10;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.back-button::before {
+  content: '\27F5';
+  font-size: 30px;
+  font-weight: bold;
+}
+
 .menu-page-content {
   position: relative;
   width: 100%;
   flex: 1;
 }
 
+
 .background-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1; /* Ensure this is lower than the z-index of the text */
+  z-index: 1;
 }
 
 .background-image img {
@@ -21,8 +54,8 @@
 
 .menu-items {
   width: 100%;
-  position: relative; /* Ensure text is positioned relative to this container */
-  z-index: 2; /* Ensure this is higher than the z-index of the background image */
+  position: relative;
+  z-index: 2;
 }
 
 .items-content {
@@ -33,12 +66,12 @@
 .menu-item {
   margin-bottom: 10px;
   width: 100%;
-  position: relative; /* Ensure text is positioned relative to this container */
+  position: relative;
 }
 
 
 
-.menu-category-name{
+.menu-category-name {
   font-size: 21px;
   font-weight: bold;
   padding-bottom: 50px;
@@ -50,13 +83,12 @@
   justify-content: center;
 }
 
-.menu-category-name > p{
+.menu-category-name>p {
   margin: 0;
   width: fit-content;
-} 
+}
 
 .menu-item-name {
-  /* font-size: 20px; */
   font-weight: bold;
 }
 

@@ -58,7 +58,6 @@ const CategoriesComponent : React.FC = () => {
       const menuItemHeight = menuItemRef.current.clientHeight;
       setMenuItemsHeight((((menuItemHeight as number + 10) * menu.categories.length) + 200));
       setMenuSingleItemHeight(menuItemHeight as number + 10 + 200 / menu.categories.length);
-      console.log('Menu items height:', menuItemHeight);
     }
   }, []);
 
@@ -68,9 +67,6 @@ const CategoriesComponent : React.FC = () => {
     if (menuSingleItemHeight)
       setNumberOfItemsPerPage(Math.floor((imageHeight as number) / (menuSingleItemHeight as number)))
   }, [imageHeight, menuItemsHeight, menuSingleItemHeight])
-
-  console.log((imageHeight as number), menuItemsHeight, menuSingleItemHeight, numberOfItemsPerPage, (menuItemsHeight as number) / (imageHeight as number), numberOfPages)
-
 
   const categoryHanlleClick = (id: number) => {
     navigate(`/items/${id}`);

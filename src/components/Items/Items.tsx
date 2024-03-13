@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import data from '../../server.json'; // change this to backend Api
 import './index.css';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 interface Category {
   id: number;
@@ -32,13 +33,16 @@ const ItemsComponent: React.FC = () => {
   const [numberOfItemsPerPage, setNumberOfItemsPerPage] = useState<number>(0);
   const [menu, setMenu] = useState<Menu>(data.menu);
   const { categoryId } = useParams<{ categoryId: string }>();
-  const [Items, setItems] = useState<MenuItem[]>([])
-  
+  const [Items, setItems] = useState<MenuItem[]>([]);
+  const [categoryName, setCategoryName] = useState<string>("");
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (categoryId && menu && menu.categories) {
       const category = menu.categories.find(category => category.id === parseInt(categoryId));
       if (category) {
         setItems([...category.items]);
+        setCategoryName(category.name);
       }
     }
   }, [categoryId])
@@ -65,7 +69,6 @@ const ItemsComponent: React.FC = () => {
       const menuItemHeight = menuItemRef.current.clientHeight;
       setMenuItemsHeight((((menuItemHeight as number + 10) * Items.length) + 200));
       setMenuSingleItemHeight(menuItemHeight as number + 10 + 200 / Items.length);
-      console.log('Menu items height:', menuItemHeight);
     }
   }, [Items]);
 
@@ -76,11 +79,17 @@ const ItemsComponent: React.FC = () => {
       setNumberOfItemsPerPage(Math.floor((imageHeight as number) / (menuSingleItemHeight as number)))
   }, [imageHeight, menuItemsHeight, menuSingleItemHeight])
 
-  console.log((imageHeight as number), menuItemsHeight, menuSingleItemHeight, numberOfItemsPerPage, (menuItemsHeight as number) / (imageHeight as number), numberOfPages)
 
-  console.log(Items)
+  const handleBackButtonClick = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="menu-page-pdf">
+      <div className='control'>
+        <h1 className='category-name'>{categoryName}</h1>
+        <button className='back-button' onClick={() => handleBackButtonClick()}></button>
+      </div>
       {[...Array(numberOfPages)].map((_, pageIndex) => {
         const startIndex = pageIndex * numberOfItemsPerPage;
         const endIndex = Math.min(startIndex + numberOfItemsPerPage, Items.length);
