@@ -25,9 +25,11 @@ interface Props {
   menu: Menu;
 }
 
-const CategoriesComponent : React.FC = () => {
+const CategoriesComponent: React.FC = () => {
   const menuImageRef = useRef<HTMLImageElement>(null);
   const menuItemRef = useRef<HTMLDivElement>(null);
+  const [menuTilte, setMenuTitle] = useState<string>(data.menu.name);
+  const [slogan, setSlogan] = useState<string>(data.menu.slogan);
   const [imageHeight, setImageHeight] = useState<number>();
   const [menuItemsHeight, setMenuItemsHeight] = useState<number>();
   const [menuSingleItemHeight, setMenuSingleItemHeight] = useState<number>();
@@ -35,7 +37,7 @@ const CategoriesComponent : React.FC = () => {
   const [numberOfItemsPerPage, setNumberOfItemsPerPage] = useState<number>(0);
   const [menu, setMenu] = useState<Menu>(data.menu);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     if (menuImageRef.current) {
       const handleImageLoad = () => {
@@ -86,6 +88,12 @@ const CategoriesComponent : React.FC = () => {
           </div>
           <div className="menu-items">
             {categoryItems.length ? <div className="items-content">
+              {pageIndex === 0 && (
+                <div className='menuTitle'>
+                  <h1 className='title'>{menuTilte}</h1>
+                  <h3 className='slogan'>{slogan}</h3>
+                </div>
+              )}
               {categoryItems?.map((category, itemIndex) => {
                 return <div key={itemIndex} className="menu-item" ref={menuItemRef}>
                   <div className="menu-category-name">

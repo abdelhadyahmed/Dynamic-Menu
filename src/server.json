@@ -69,7 +69,7 @@
                     {
                         "id": 2,
                         "name":"BLACK PEPPER BEEF",
-                        "description": "Wok fried beef in black pepper sauce"
+                        "description": "Wok fried beef in black pepper sauce,Wok fried beef in black pepper sauce,Wok fried beef in black pepper sauce"
                     },
                     {
                         "id": 3,
@@ -220,7 +220,63 @@
                         "description": "Deep fried banana with caramel, served with vanilla ice cream"
                     }
                 ]
+            },
+            {
+                "id":1,
+                "name":"Soup",
+                "items":[
+                    {
+                        "id": 1,
+                        "name":"TOM YUM TALAY",
+                        "description": "Hot and sour seafood soup with Thai herbs"
+                    },
+                    {
+                        "id": 1,
+                        "name":"TOM YUM TALAY",
+                        "description": "Hot and sour seafood soup with Thai herbs"
+                    },
+                    {
+                        "id": 1,
+                        "name":"TOM YUM TALAY",
+                        "description": "Hot and sour seafood soup with Thai herbs"
+                    }
+                ]
+            },
+            {
+                "id":2,
+                "name":"Appetisers",
+                "items":[
+                    {
+                        "id": 1,
+                        "name":"CHICKEN TIKKA CHAAT",
+                        "description": "Sliced chicken tikka with bell peppers, onions, tamarind and mint sauce"
+                    },
+                    {
+                        "id": 2,
+                        "name":"CRISPY SEAFOOD ROLL",
+                        "description": "Shrimps, scallops, glass noodles and shitake mushrooms"
+                    }
+                ]
+            },
+            {
+                "id":3,
+                "name":"Fast Food",
+                "items":[
+                    {
+                        "id": 1,
+                        "name":"CHICKEN TIKKA CHAAT",
+                        "description": "Sliced chicken tikka with bell peppers, onions, tamarind and mint sauce"
+                    },
+                    {
+                        "id": 2,
+                        "name":"CRISPY SEAFOOD ROLL",
+                        "description": "Shrimps, scallops, glass noodles and shitake mushrooms"
+                    }
+                ]
             }
+            
         ]
     }
 }
+
+

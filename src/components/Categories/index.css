@@ -1,3 +1,17 @@
+.menuTitle {
+  text-align: center;
+  width: 100%;
+}
+
+.title {
+  font-size: 50px;
+}
+
+.slogan {
+  font-size: 40px;
+  font-weight: 500;
+}
+
 .menu-page-content {
   position: relative;
   width: 100%;
@@ -16,7 +30,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  pointer-events: none;
 }
 
 .menu-items {
@@ -36,9 +49,7 @@
   position: relative;
 }
 
-
-
-.menu-category-name{
+.menu-category-name {
   font-size: 21px;
   font-weight: bold;
   padding-bottom: 50px;
@@ -50,11 +61,11 @@
   justify-content: center;
 }
 
-.menu-category-name > p{
+.menu-category-name>p {
   margin: 0;
   width: fit-content;
   cursor: pointer;
-} 
+}
 
 .menu-item-name {
   font-weight: bold;
@@ -64,32 +75,19 @@
   float: right;
 }
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 932px) {
+  .title {
+    font-size: 30px;
+  }
+
+  .slogan {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
   .items-content {
-    padding: 50px 20px 0px 20px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .menu-category-name {
-    font-size: 18px; 
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw; /* Set width to 100% of viewport width */
-    height: 100%; /* Ensure the container takes up the full height */
-    z-index: 1;
-  }
-  
-  .background-image img {
-    width: 100vw; /* Ensure the image fills the entire width of its container */
-    height: 100%; /* Ensure the image fills the entire height of its container */
-    object-fit: cover;
-    /* pointer-events: none; */
+    padding: 50px 50px 0px 50px;
+    background-color: transparent;
   }
 }

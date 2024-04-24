@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import data from '../../server.json'; // change this to backend Api
 import './index.css';
@@ -104,16 +103,17 @@ const ItemsComponent: React.FC = () => {
               {categoryItems?.map((item, itemIndex) => {
                 return <div key={itemIndex} className="menu-item" ref={menuItemRef}>
                   <div className="menu-category-name">{item.name}</div>
-                  <div className="menu-category-name">{item.description}</div>
+                  <div className="menu-category-description">{item.description}</div>
                 </div>
               })}
             </div>
               :
               <div className="items-content">
+
                 {Items?.map((item, itemIndex) => {
                   return <div key={itemIndex} className="menu-item" ref={menuItemRef}>
                     <div className="menu-category-name">{item.name}</div>
-                    <div className="menu-category-name">{item.description}</div>
+                    <div className="menu-category-description">{item.description}</div>
                   </div>
                 })}
               </div>}
