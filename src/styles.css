@@ -10,3 +10,9 @@ body {
 body {
     min-height: 100vh;
 }
+
+@media screen and (max-width: 768px) {
+    body,html{
+        padding: 0px;
+    }
+}

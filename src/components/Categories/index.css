@@ -9,7 +9,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1; /* Ensure this is lower than the z-index of the text */
+  z-index: 1;
 }
 
 .background-image img {
@@ -21,8 +21,8 @@
 
 .menu-items {
   width: 100%;
-  position: relative; /* Ensure text is positioned relative to this container */
-  z-index: 2; /* Ensure this is higher than the z-index of the background image */
+  position: relative;
+  z-index: 2;
 }
 
 .items-content {
@@ -33,7 +33,7 @@
 .menu-item {
   margin-bottom: 10px;
   width: 100%;
-  position: relative; /* Ensure text is positioned relative to this container */
+  position: relative;
 }
 
 
@@ -57,10 +57,39 @@
 } 
 
 .menu-item-name {
-  /* font-size: 20px; */
   font-weight: bold;
 }
 
 .menu-item-price {
   float: right;
+}
+
+@media screen and (max-width: 768px) {
+  .items-content {
+    padding: 50px 20px 0px 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .menu-category-name {
+    font-size: 18px; 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Set width to 100% of viewport width */
+    height: 100%; /* Ensure the container takes up the full height */
+    z-index: 1;
+  }
+  
+  .background-image img {
+    width: 100vw; /* Ensure the image fills the entire width of its container */
+    height: 100%; /* Ensure the image fills the entire height of its container */
+    object-fit: cover;
+    /* pointer-events: none; */
+  }
 }

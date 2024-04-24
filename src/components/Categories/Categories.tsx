@@ -74,6 +74,7 @@ const CategoriesComponent : React.FC = () => {
 
   return (
     <div className="menu-page-pdf">
+      <>{console.log(numberOfPages)}</>
       {[...Array(numberOfPages)].map((_, pageIndex) => {
         const startIndex = pageIndex * numberOfItemsPerPage;
         const endIndex = Math.min(startIndex + numberOfItemsPerPage, menu.categories.length);
