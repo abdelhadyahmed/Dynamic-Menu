@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import data from '../../server.json'; // change this to backend Api
 import './index.css';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -20,6 +19,7 @@ interface Menu {
   name: string;
   slogan: string;
   categories: Category[];
+  cover: string;
 }
 
 const ItemsComponent: React.FC = () => {
@@ -30,11 +30,23 @@ const ItemsComponent: React.FC = () => {
   const [menuSingleItemHeight, setMenuSingleItemHeight] = useState<number>();
   const [numberOfPages, setNumberOfPages] = useState<number>();
   const [numberOfItemsPerPage, setNumberOfItemsPerPage] = useState<number>(0);
-  const [menu, setMenu] = useState<Menu>(data.menu);
+  const [menu, setMenu] = useState<Menu | undefined>();
+  const [cover, setCover] = useState<string>("");
   const { categoryId } = useParams<{ categoryId: string }>();
   const [Items, setItems] = useState<MenuItem[]>([]);
   const [categoryName, setCategoryName] = useState<string>("");
   const navigate = useNavigate();
+
+  const getDate = async () => {
+    const res = await fetch(`http://localhost:3333/menu`);
+    const menu: Menu = await res.json();
+    setMenu(menu);
+    setCover(process.env.PUBLIC_URL + menu.cover);
+  }
+
+  useEffect(() => {
+    getDate();
+  }, []);
 
   useEffect(() => {
     if (categoryId && menu && menu.categories) {
@@ -44,7 +56,7 @@ const ItemsComponent: React.FC = () => {
         setCategoryName(category.name);
       }
     }
-  }, [categoryId])
+  }, [categoryId, menu])
 
   useEffect(() => {
     if (menuImageRef.current) {
@@ -82,44 +94,55 @@ const ItemsComponent: React.FC = () => {
   const handleBackButtonClick = () => {
     navigate(-1);
   };
-
   return (
     <div className="menu-page-pdf">
-      <div className='control'>
-        <h1 className='category-name'>{categoryName}</h1>
-        <button className='back-button' onClick={() => handleBackButtonClick()}></button>
-      </div>
-      {[...Array(numberOfPages)].map((_, pageIndex) => {
-        const startIndex = pageIndex * numberOfItemsPerPage;
-        const endIndex = Math.min(startIndex + numberOfItemsPerPage, Items.length);
-        const categoryItems = Items.slice(startIndex, endIndex);
-
-        return <div key={pageIndex} className="menu-page-content">
-          <div className="background-image" >
-            <img ref={menuImageRef} src="../assets/images/demoPhoto.jpeg" alt="" />
-          </div>
-          <div className="menu-items">
-            {categoryItems.length ? <div className="items-content">
-              {categoryItems?.map((item, itemIndex) => {
-                return <div key={itemIndex} className="menu-item" ref={menuItemRef}>
-                  <div className="menu-category-name">{item.name}</div>
-                  <div className="menu-category-description">{item.description}</div>
-                </div>
-              })}
-            </div>
-              :
-              <div className="items-content">
-
-                {Items?.map((item, itemIndex) => {
-                  return <div key={itemIndex} className="menu-item" ref={menuItemRef}>
-                    <div className="menu-category-name">{item.name}</div>
-                    <div className="menu-category-description">{item.description}</div>
-                  </div>
-                })}
-              </div>}
-          </div>
+      <div className="menu-page-content">
+        <div className="background-image" >
+          <img ref={menuImageRef} src={cover} alt="" />
         </div>
-      })}
+      </div>
+      {
+        Items ? (
+          <>
+            <div className='control'>
+              <h1 className='category-name'>{categoryName}</h1>
+              <button className='back-button' onClick={() => handleBackButtonClick()}></button>
+            </div>
+            {[...Array(numberOfPages)].map((_, pageIndex) => {
+              const startIndex = pageIndex * numberOfItemsPerPage;
+              const endIndex = Math.min(startIndex + numberOfItemsPerPage, Items.length);
+              const categoryItems = Items.slice(startIndex, endIndex);
+
+              return <div key={pageIndex} className="menu-page-content">
+                <div className="background-image" >
+                  <img ref={menuImageRef} src={cover} alt="" />
+                </div>
+                <div className="menu-items">
+                  {categoryItems.length ? <div className="items-content">
+                    {categoryItems?.map((item, itemIndex) => {
+                      return <div key={itemIndex} className="menu-item" ref={menuItemRef}>
+                        <div className="menu-category-name">{item.name}</div>
+                        <div className="menu-category-description">{item.description}</div>
+                      </div>
+                    })}
+                  </div>
+                    :
+                    <div className="items-content">
+
+                      {Items?.map((item, itemIndex) => {
+                        return <div key={itemIndex} className="menu-item" ref={menuItemRef}>
+                          <div className="menu-category-name">{item.name}</div>
+                          <div className="menu-category-description">{item.description}</div>
+                        </div>
+                      })}
+                    </div>}
+                </div>
+              </div>
+            })}
+          </>
+        ) : (<div>Loading...</div>)
+      }
+
     </div>
   );
 };
